@@ -10,8 +10,46 @@
 </head>
 
 <body>
-    <h1>hello world from ejs</h1>
-    <img src="/img/hinh-nen-may-tinh-4k-game-min.jpg" alt="">
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+    <h1>List user table</h1>
+
+    <table id="customers">
+        <tr>
+            <th>ID</th>
+            <th>FristName</th>
+            <th>LastName</th>
+            <th>Action</th>
+        </tr>
+        <% for(let i=0; i < dataUser.length; i++) { %>
+            <tr>
+                <td>
+                    <%= dataUser[i].id %>
+                </td>
+                <td>
+                    <%= dataUser[i].firstName %>
+                </td>
+                <td>
+                    <%= dataUser[i].lastName %>
+                </td>
+                <td>
+                    <button><a href="/detail/user/<%= dataUser[i].id %>">Detail</a> </button>
+                    <button>Delete</button>
+                    <button>Edit</button>
+
+
+                </td>
+
+            </tr>
+            <% } %>
+
+    </table>
+
+
 </body>
 
 </html>

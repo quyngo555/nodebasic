@@ -5,6 +5,7 @@ import configViewEngine from './configs/viewEngine.js'
 import express from 'express'
 import path from 'path'
 import 'dotenv/config'
+import connection from './configs/connectDB.js';
 const app = express()
 const port = process.env.PORT || 8080
 console.log("check port: ", port);
