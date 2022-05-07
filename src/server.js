@@ -6,6 +6,7 @@ import express from 'express'
 import path from 'path'
 import 'dotenv/config'
 import connection from './configs/connectDB.js';
+import initAPIRoute from './route/api.js';
 const app = express()
 const port = process.env.PORT || 8080
 console.log("check port: ", port);
@@ -21,6 +22,9 @@ configViewEngine(app)
 
 //init web route
 initWebRoute(app)
+
+//init api route
+initAPIRoute(app)
 
 
 app.listen(port, () => {
