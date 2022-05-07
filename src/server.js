@@ -13,6 +13,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 import initWebRoute from './route/web.js'
 
+// get value of form
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 //setup view engine
 configViewEngine(app)
 
